@@ -29,6 +29,4 @@ class UpdateMenusRequest extends FormRequest
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ];
     }
-
-    aa
 }
