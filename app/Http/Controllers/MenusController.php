@@ -15,16 +15,17 @@ class MenusController extends Controller
         return response()->json(MenusResource::collection(Menus::all()), 200);
     }
 
-    // menampilkan menu berdasarkan ID
-    public function getMenuById($id)
+        public function show($id)
     {
         $menu = Menus::find($id);
-        if ($menu) {
-            return response()->json(new MenusResource($menu), 200);
-        } else {
+
+        if (!$menu) {
             return response()->json(['message' => 'Menu not found'], 404);
         }
+
+        return response()->json(new MenusResource($menu), 200);
     }
+
 
     // Menampilkan menu yang rekomendasi
         public function getRecommended()
