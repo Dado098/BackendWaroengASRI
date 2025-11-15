@@ -18,15 +18,17 @@ class BranchesController extends Controller
 
 
     // Menampilkan cabang berdasarkan ID
-    public function getBranchById($id)
+    public function show($id)
     {
         $branch = Branches::find($id);
-        if ($branch) {
-            return response()->json(new BrancesResource($branch), 200);
-        } else {
+
+        if (!$branch) {
             return response()->json(['message' => 'Branch not found'], 404);
         }
+
+        return response()->json(new BrancesResource($branch), 200);
     }
+
 
     //menambahkan cabang baru
     public function store(StoreBrancesRequest $request)
