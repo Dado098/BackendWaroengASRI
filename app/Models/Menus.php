@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Menus extends Model
 {
     protected $table = 'menus'; // <--- tambah ini
+    protected $casts = [
+        'rekomendasi' => 'boolean',
+    ];
 
     protected $fillable = [
         'branch_id',
@@ -14,6 +17,7 @@ class Menus extends Model
         'description',
         'price',
         'image',
+        'rekomendasi',
     ];
 
     public function branch()

@@ -22,11 +22,12 @@ class UpdateMenusRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'branch_id' => 'sometimes|required|integer|exists:branches,id',
-            'name' => 'sometimes|required|string|max:255',
+            'branch_id' => 'required|exists:branches,id',
+            'name' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'price' => 'sometimes|required|numeric|min:0',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'price' => 'required|numeric|min:0',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'rekomendasi' => 'nullable|boolean',
         ];
     }
 }

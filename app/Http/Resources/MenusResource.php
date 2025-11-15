@@ -21,6 +21,7 @@ class MenusResource extends JsonResource
             'description' => $this->description,
             'price' => $this->price,
             'image_url' => $this->image ? asset('storage/' . $this->image) : null,
+            'rekomendasi' => $this->rekomendasi,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ];

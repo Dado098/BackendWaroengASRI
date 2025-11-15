@@ -22,11 +22,12 @@ class StoreMenusRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'branch_id' => 'required|integer|exists:branches,id',
+            'branch_id' => 'required|exists:branches,id',
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
             'price' => 'required|numeric|min:0',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'rekomendasi' => 'nullable|boolean',
         ];
     }
 }

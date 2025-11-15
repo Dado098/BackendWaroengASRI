@@ -18,6 +18,7 @@ return new class extends Migration
         $table->text('description')->nullable();
         $table->decimal('price', 10, 2);
         $table->string('image')->nullable();
+        $table->boolean('rekomendasi')->nullable();
         $table->timestamps();
         });
     }

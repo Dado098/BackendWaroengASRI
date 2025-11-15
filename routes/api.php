@@ -10,4 +10,6 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::apiResource('branches', BranchesController::class);
+Route::get('/menus/recommended', [MenusController::class, 'getRecommended']);
 Route::apiResource('menus', MenusController::class);
+
